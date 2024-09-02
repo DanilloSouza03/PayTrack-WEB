@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Contas</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <img id="logo" src="Logo.png" alt="Logo da Empresa">
+        <h1>Controle de Contas</h1>
+    </header>
+
+    <div class="container1">
+        <section id="formularioAdicionarConta" class="controle-contas">
+        <h2>Adicionar Nova Conta</h2>
+        <form id="formAdicionarConta">
+            <label for="nome">Nome:</label><br>
+            <input type="text" id="nome" name="nome" required><br>
+            
+            <label for="descricao">Descrição:</label><br>
+            <input type="text" id="descricao" name="descricao" required><br>
+            
+            <label for="data">Data:</label><br>
+            <input type="date" id="data" name="data" required><br>
+            
+            <label for="valor">Valor em R$:</label><br>
+            <input type="number" id="valor" name="valor" required step="0.01" min="0"><br>
+         
+            <label for="situacao">Situação:</label><br>
+            <select name="situacao" id="situacao">
+                <option value="Pago">Pago</option>
+                <option value="Á Pagar">Á Pagar</option>
+                <option value="Vencido">Vencido</option>
+            </select>
+            
+            <button id="botaoEnviar" type="submit">Adicionar Conta</button>
+        </form>    
+        </section>
+
+        <section id="buscarContaPorID" class="controle-contas">
+        <h2>Procurar Conta por ID</h2>
+
+        <label for="idConta">ID da Conta:</label>
+        <input type="number" id="idConta" name="idConta" placeholder="ID da Conta">
+        
+        <button id="botaoProcurar">Procurar</button>
+        
+        <div id="resultadoProcura"></div>
+        </section>
+    </div>
+
+    <section id="listarContas" class="controle-contas">
+        <h2>Listar Contas</h2>
+        <table id="tabelaContas">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Data</th>
+                    <th>Valor</th>
+                    <th>Situação</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="corpoTabelaContas">
+                <!-- As contas pelo DOM vem aqui -->
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; Copyright Danillo de Souza. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

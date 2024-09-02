@@ -1,0 +1,152 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    color: #333;
+}
+
+header {
+    background-color: #e6e5e5;
+}
+
+header h1 {
+    display: inline-block; 
+    vertical-align: middle;
+    color: #8C52FF
+}
+
+header img {
+    width: 15%; 
+    height: auto; 
+    margin-right: 10px; 
+    vertical-align: middle; 
+    display: inline-block; 
+}
+
+.container1 {
+    display: flex;
+    margin: 1%;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+
+.controle-contas {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px #0000001a;
+}
+
+.controle-contas h2 {
+    margin-bottom: 1%;
+    color: #8C52FF;
+}
+
+section#formularioAdicionarConta {
+    width: 60%;
+}
+
+section#formularioAdicionarConta input,
+select {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 18px);
+}
+
+section#formularioAdicionarConta button {
+    background-color: #8C52FF; 
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+}
+
+section#formularioAdicionarConta button:hover {
+    background-color: #4b0082; 
+}
+
+section#buscarContaPorID {
+    width: 60%;
+}
+
+section#buscarContaPorID button {
+    background-color: #7ED957; 
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+}
+
+section#buscarContaPorID button:hover {
+    background-color: #5dab33; 
+}
+
+section#buscarContaPorID div {
+    margin-top: 4.5%; 
+}
+
+section#buscarContaPorID div p {
+    padding: 1%;
+    color: #000000; 
+}
+
+section#listarContas {
+    margin: 1%;
+}
+
+section#listarContas table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+section#listarContas th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+section#listarContas th {
+    background-color: #8C52FF; 
+    color: #fff;
+}
+
+button.btn_editar {
+    padding: 2.5%;
+    background-color: #2d5ce7; 
+    color: #fff;
+    border: none;
+    border-radius: 10%;
+    box-shadow: 1px 2px 4px #0000001a;
+}
+
+button.btn_apagar {
+    padding: 2.5%;
+    background-color: #ef573c; 
+    color: #fff;
+    border: none;
+    border-radius: 10%;
+    box-shadow: 1px 2px 4px #0000001a;
+}
+
+footer {
+    background-color: #8C52FF;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+}
