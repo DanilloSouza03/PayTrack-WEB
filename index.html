@@ -1,33 +1,63 @@
 <!DOCTYPE html>
-  <html lang="pt-BR">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>PayTrack - Em Construção 🚧</title>
-      <link rel="icon" type="image/png" href="Logo.png" />
-      <link rel="stylesheet" href="./assets/css/index.css">
-    </head>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PayTrack - Em Construção 🚧</title>
+    <link rel="icon" type="image/png" href="Logo.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
 
-    <body>
-      <div class="construction-container">
-        <header>
-          <img src="Logo.png" alt="Logo PayTrack" />
-        </header>
+  <body
+    class="font-sans flex flex-col items-center justify-center min-h-screen text-center bg-gradient-to-br from-[#8c52ff] to-[#7ed957] text-white overflow-hidden p-4"
+  >
+    <div
+      class="max-w-md w-full p-5 bg-white bg-opacity-10 rounded-2xl shadow-lg backdrop-blur-md"
+    >
+      <header>
+        <img
+          src="Logo.png"
+          alt="Logo PayTrack"
+          class="w-28 sm:w-32 mb-5 animate-float mx-auto"
+        />
+      </header>
 
-        <main>
-          <h1>Em Construção 🚧</h1>
-          <p>
-            Estamos trabalhando para trazer uma nova experiência no controle de
-            contas pessoais. Volte em breve!
-          </p>
+      <main>
+        <h1 class="text-3xl sm:text-4xl mb-2">Em Construção 🚧</h1>
+        <p class="text-base sm:text-lg opacity-90">
+          Estamos trabalhando para trazer uma nova experiência no controle de
+          contas pessoais. Volte em breve!
+        </p>
 
-          <a href="./pages/main.html" class="btn">Acessar o Painel</a>
-        </main>
-      </div>
+        <a
+          href="./pages/main.html"
+          class="inline-block mt-6 px-6 py-3 text-base border-none rounded-lg bg-white text-[#8c52ff] cursor-pointer font-semibold transition-all duration-300 hover:bg-gray-100 hover:translate-y-[-2px] no-underline"
+          >Acessar o Painel</a
+        >
+      </main>
+    </div>
 
-      <footer>
-        <p>&copy; 2024 PayTrack — Desenvolvido por Danillo de Souza</p>
-      </footer>
-    </body>
-  </html>
+    <footer
+      class="absolute bottom-5 text-xs sm:text-sm text-white text-opacity-80"
+    >
+      <p>&copy; 2024 PayTrack — Desenvolvido por Danillo de Souza</p>
+    </footer>
+
+    <style>
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+    </style>
+  </body>
 </html>
