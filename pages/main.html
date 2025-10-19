@@ -4,34 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PayTrack</title>
-    <link rel="stylesheet" type="text/css" href="../assets/css/main.css" />
     <link
       rel="shortcut icon"
       href="../assets/img/logo.png"
       type="image/x-icon"
     />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="../assets/js/main.js" defer></script>
   </head>
-  <body>
-    <header>
-      <img id="logo" src="../assets/img/logo.png" alt="Logo da Empresa" />
-      <h1>Controle de Contas</h1>
+  <body class="font-sans bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+    <header
+      class="bg-gray-200 p-4 flex flex-col sm:flex-row items-center justify-center sm:justify-start shadow-md"
+    >
+      <img
+        id="logo"
+        src="../assets/img/logo.png"
+        alt="Logo da Empresa"
+        class="w-24 sm:w-32 md:w-40 h-auto mb-2 sm:mb-0 sm:mr-4"
+      />
+      <h1 class="text-2xl sm:text-3xl md:text-4xl text-[#8c52ff] font-bold">
+        Controle de Contas
+      </h1>
     </header>
 
-    <div class="container1">
-      <section id="formularioAdicionarConta" class="controle-contas">
-        <h2>Adicionar Nova Conta</h2>
+    <div
+      class="flex flex-wrap justify-center lg:justify-evenly m-4 gap-5 flex-grow"
+    >
+      <section
+        id="formularioAdicionarConta"
+        class="p-5 bg-white rounded-lg shadow-md w-full md:w-[45%] lg:w-[40%]"
+      >
+        <h2 class="mb-4 text-[#8c52ff] text-xl sm:text-2xl font-semibold">
+          Adicionar Nova Conta
+        </h2>
         <form id="formAdicionarConta">
-          <label for="nome">Nome:</label><br />
-          <input type="text" id="nome" name="nome" required /><br />
+          <label for="nome" class="block mb-1 text-left">Nome:</label>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            required
+            class="p-2 mb-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-[#8c52ff]"
+          /><br />
 
-          <label for="descricao">Descrição:</label><br />
-          <input type="text" id="descricao" name="descricao" required /><br />
+          <label for="descricao" class="block mb-1 text-left">Descrição:</label>
+          <input
+            type="text"
+            id="descricao"
+            name="descricao"
+            required
+            class="p-2 mb-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-[#8c52ff]"
+          /><br />
 
-          <label for="data">Data:</label><br />
-          <input type="date" id="data" name="data" required /><br />
+          <label for="data" class="block mb-1 text-left">Data:</label>
+          <input
+            type="date"
+            id="data"
+            name="data"
+            required
+            class="p-2 mb-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-[#8c52ff]"
+          /><br />
 
-          <label for="valor">Valor em R$:</label><br />
+          <label for="valor" class="block mb-1 text-left">Valor em R$:</label>
           <input
             type="number"
             id="valor"
@@ -39,89 +74,191 @@
             required
             step="0.01"
             min="0"
+            class="p-2 mb-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-[#8c52ff]"
           /><br />
 
-          <label for="situacao">Situação:</label><br />
-          <select name="situacao" id="situacao">
+          <label for="situacao" class="block mb-1 text-left">Situação:</label>
+          <select
+            name="situacao"
+            id="situacao"
+            class="p-2 mb-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-[#8c52ff]"
+          >
             <option value="Pago">Pago</option>
             <option value="Á Pagar">Á Pagar</option>
             <option value="Vencido">Vencido</option>
           </select>
 
-          <button id="botaoEnviar" type="submit">Adicionar Conta</button>
+          <button
+            id="botaoEnviar"
+            type="submit"
+            class="bg-[#8c52ff] text-white cursor-pointer px-5 py-2 border-none rounded-md hover:bg-[#4b0082] transition-colors duration-300 mt-2"
+          >
+            Adicionar Conta
+          </button>
         </form>
       </section>
 
-      <section id="buscarContaPorID" class="controle-contas">
-        <h2>Procurar Conta por ID</h2>
+      <section
+        id="buscarContaPorID"
+        class="p-5 bg-white rounded-lg shadow-md w-full md:w-[45%] lg:w-[40%]"
+      >
+        <h2 class="mb-4 text-[#8c52ff] text-xl sm:text-2xl font-semibold">
+          Procurar Conta por ID
+        </h2>
 
-        <label for="idConta">ID da Conta:</label>
+        <label for="idConta" class="block mb-1 text-left">ID da Conta:</label>
         <input
           type="number"
           id="idConta"
           name="idConta"
           placeholder="ID da Conta"
+          class="p-2 mb-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-[#7ed957]"
         />
 
-        <button id="botaoProcurar">Procurar</button>
+        <button
+          id="botaoProcurar"
+          class="bg-[#7ed957] text-white cursor-pointer px-5 py-2 border-none rounded-md hover:bg-[#5dab33] transition-colors duration-300 mt-2"
+        >
+          Procurar
+        </button>
 
-        <div id="resultadoProcura">
-          <p><b>ID:</b> 2</p>
-          <p><b>Nome:</b> Mensalidade da Academia</p>
-          <p><b>Descrição:</b> Plano mensal da academia</p>
-          <p><b>Data:</b> 20/10/2025</p>
-          <p><b>Valor:</b> R$ 99.90</p>
-          <p><b>Situação:</b> À Pagar</p>
+        <div
+          id="resultadoProcura"
+          class="mt-7 text-left bg-gray-50 p-3 rounded-md border border-gray-200"
+        >
+          <p class="p-1 text-black"><b>ID:</b> 2</p>
+          <p class="p-1 text-black"><b>Nome:</b> Mensalidade da Academia</p>
+          <p class="p-1 text-black">
+            <b>Descrição:</b> Plano mensal da academia
+          </p>
+          <p class="p-1 text-black"><b>Data:</b> 20/10/2025</p>
+          <p class="p-1 text-black"><b>Valor:</b> R$ 99.90</p>
+          <p class="p-1 text-black"><b>Situação:</b> À Pagar</p>
         </div>
       </section>
     </div>
 
-    <section id="listarContas" class="controle-contas">
-      <h2>Listar Contas</h2>
-      <table id="tabelaContas">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Descrição</th>
-            <th>Data</th>
-            <th>Valor</th>
-            <th>Situação</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody id="corpoTabelaContas">
-          <!-- As contas pelo DOM vem aqui -->
-          <tr>
-            <td>1</td>
-            <td>Conta de Luz</td>
-            <td>Conta do mês 10 de luz...</td>
-            <td>10/10/2025</td>
-            <td>R$ 120.53</td>
-            <td>À Pagar</td>
-            <td>
-              <button class="btn_editar">Editar</button>
-              <button class="btn_apagar">Apagar</button>
-            </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Mensalidade da Academia</td>
-            <td>Plano mensal da academia</td>
-            <td>20/10/2025</td>
-            <td>R$ 99.90</td>
-            <td>À Pagar</td>
-            <td>
-              <button class="btn_editar">Editar</button>
-              <button class="btn_apagar">Apagar</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <section
+      id="listarContas"
+      class="m-4 p-5 bg-white rounded-lg shadow-md overflow-x-auto"
+    >
+      <h2 class="mb-4 text-[#8c52ff] text-xl sm:text-2xl font-semibold">
+        Listar Contas
+      </h2>
+      <div class="overflow-x-auto">
+        <table id="tabelaContas" class="w-full border-collapse min-w-max">
+          <thead>
+            <tr>
+              <th
+                class="p-3 text-left border-b border-gray-300 bg-[#8c52ff] text-white text-sm sm:text-base"
+              >
+                ID
+              </th>
+              <th
+                class="p-3 text-left border-b border-gray-300 bg-[#8c52ff] text-white text-sm sm:text-base"
+              >
+                Nome
+              </th>
+              <th
+                class="p-3 text-left border-b border-gray-300 bg-[#8c52ff] text-white text-sm sm:text-base"
+              >
+                Descrição
+              </th>
+              <th
+                class="p-3 text-left border-b border-gray-300 bg-[#8c52ff] text-white text-sm sm:text-base"
+              >
+                Data
+              </th>
+              <th
+                class="p-3 text-left border-b border-gray-300 bg-[#8c52ff] text-white text-sm sm:text-base"
+              >
+                Valor
+              </th>
+              <th
+                class="p-3 text-left border-b border-gray-300 bg-[#8c52ff] text-white text-sm sm:text-base"
+              >
+                Situação
+              </th>
+              <th
+                class="p-3 text-left border-b border-gray-300 bg-[#8c52ff] text-white text-sm sm:text-base"
+              >
+                Ações
+              </th>
+            </tr>
+          </thead>
+          <tbody id="corpoTabelaContas">
+            <!-- As contas pelo DOM vem aqui -->
+            <tr>
+              <td class="p-3 text-left border-b border-gray-300 text-sm">1</td>
+              <td class="p-3 text-left border-b border-gray-300 text-sm">
+                Conta de Luz
+              </td>
+              <td class="p-3 text-left border-b border-gray-300 text-sm">
+                Conta do mês 10 de luz...
+              </td>
+              <td class="p-3 text-left border-b border-gray-300 text-sm">
+                10/10/2025
+              </td>
+              <td class="p-3 text-left border-b border-gray-300 text-sm">
+                R$ 120.53
+              </td>
+              <td class="p-3 text-left border-b border-gray-300 text-sm">
+                À Pagar
+              </td>
+              <td class="p-3 text-left border-b border-gray-300">
+                <button
+                  class="px-3 py-1.5 bg-[#2d5ce7] text-white border-none rounded-md shadow-sm hover:bg-blue-700 transition-colors duration-300 text-sm mr-2"
+                >
+                  Editar
+                </button>
+                <button
+                  class="px-3 py-1.5 bg-[#ef573c] text-white border-none rounded-md shadow-sm hover:bg-red-600 transition-colors duration-300 text-sm"
+                >
+                  Apagar
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td class="p-3 text-left border-b border-gray-300 text-sm">2</td>
+              <td class="p-3 text-left border-b border-gray-300 text-sm">
+                Mensalidade da Academia
+              </td>
+              <td class="p-3 text-left border-b border-gray-300 text-sm">
+                Plano mensal da academia
+              </td>
+              <td class="p-3 text-left border-b border-gray-300 text-sm">
+                20/10/2025
+              </td>
+              <td class="p-3 text-left border-b border-gray-300 text-sm">
+                R$ 99.90
+              </td>
+              <td class="p-3 text-left border-b border-gray-300 text-sm">
+                À Pagar
+              </td>
+              <td class="p-3 text-left border-b border-gray-300">
+                <button
+                  class="px-3 py-1.5 bg-[#2d5ce7] text-white border-none rounded-md shadow-sm hover:bg-blue-700 transition-colors duration-300 text-sm mr-2"
+                >
+                  Editar
+                </button>
+                <button
+                  class="px-3 py-1.5 bg-[#ef573c] text-white border-none rounded-md shadow-sm hover:bg-red-600 transition-colors duration-300 text-sm"
+                >
+                  Apagar
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
-    <footer>
-      <p>&copy; Copyright Danillo de Souza. Todos os direitos reservados.</p>
+    <footer
+      class="bg-[#8c52ff] text-white text-center p-2.5 w-full text-xs sm:text-sm mt-auto"
+    >
+      <p class="m-0">
+        &copy; Copyright Danillo de Souza. Todos os direitos reservados.
+      </p>
     </footer>
   </body>
 </html>
