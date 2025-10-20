@@ -3,89 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Controle de Contas</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script src="script.js" defer></script>
+    <title>PayTrack - Em Construção 🚧</title>
+    <link rel="icon" type="image/png" href="Logo.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <header>
-      <img id="logo" src="Logo.png" alt="Logo da Empresa" />
-      <h1>Controle de Contas</h1>
-    </header>
 
-    <div class="container1">
-      <section id="formularioAdicionarConta" class="controle-contas">
-        <h2>Adicionar Nova Conta</h2>
-        <form id="formAdicionarConta">
-          <label for="nome">Nome:</label><br />
-          <input type="text" id="nome" name="nome" required /><br />
-
-          <label for="descricao">Descrição:</label><br />
-          <input type="text" id="descricao" name="descricao" required /><br />
-
-          <label for="data">Data:</label><br />
-          <input type="date" id="data" name="data" required /><br />
-
-          <label for="valor">Valor em R$:</label><br />
-          <input
-            type="number"
-            id="valor"
-            name="valor"
-            required
-            step="0.01"
-            min="0"
-          /><br />
-
-          <label for="situacao">Situação:</label><br />
-          <select name="situacao" id="situacao">
-            <option value="Pago">Pago</option>
-            <option value="Á Pagar">Á Pagar</option>
-            <option value="Vencido">Vencido</option>
-          </select>
-
-          <button id="botaoEnviar" type="submit">Adicionar Conta</button>
-        </form>
-      </section>
-
-      <section id="buscarContaPorID" class="controle-contas">
-        <h2>Procurar Conta por ID</h2>
-
-        <label for="idConta">ID da Conta:</label>
-        <input
-          type="number"
-          id="idConta"
-          name="idConta"
-          placeholder="ID da Conta"
+  <body
+    class="font-sans flex flex-col items-center justify-center min-h-screen text-center bg-gradient-to-br from-[#8c52ff] to-[#7ed957] text-white overflow-hidden p-4"
+  >
+    <div
+      class="max-w-md w-full p-5 bg-white bg-opacity-10 rounded-2xl shadow-lg backdrop-blur-md"
+    >
+      <header>
+        <img
+          src="Logo.png"
+          alt="Logo PayTrack"
+          class="w-28 sm:w-32 mb-5 animate-float mx-auto"
         />
+      </header>
 
-        <button id="botaoProcurar">Procurar</button>
+      <main>
+        <h1 class="text-3xl sm:text-4xl mb-2">Em Construção 🚧</h1>
+        <p class="text-base sm:text-lg opacity-90">
+          Estamos trabalhando para trazer uma nova experiência no controle de
+          contas pessoais. Volte em breve!
+        </p>
 
-        <div id="resultadoProcura"></div>
-      </section>
+        <a
+          href="./pages/main.html"
+          class="inline-block mt-6 px-6 py-3 text-base border-none rounded-lg bg-white text-[#8c52ff] cursor-pointer font-semibold transition-all duration-300 hover:bg-gray-100 hover:translate-y-[-2px] no-underline"
+          >Acessar o Painel</a
+        >
+      </main>
     </div>
 
-    <section id="listarContas" class="controle-contas">
-      <h2>Listar Contas</h2>
-      <table id="tabelaContas">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Descrição</th>
-            <th>Data</th>
-            <th>Valor</th>
-            <th>Situação</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody id="corpoTabelaContas">
-          <!-- As contas pelo DOM vem aqui -->
-        </tbody>
-      </table>
-    </section>
-
-    <footer>
-      <p>&copy; Copyright Danillo de Souza. Todos os direitos reservados.</p>
+    <footer
+      class="absolute bottom-5 text-xs sm:text-sm text-white text-opacity-80"
+    >
+      <p>&copy; 2024 PayTrack — Desenvolvido por Danillo de Souza</p>
     </footer>
+
+    <style>
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+    </style>
   </body>
 </html>
