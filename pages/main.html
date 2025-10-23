@@ -3,246 +3,207 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PayTrack</title>
+    <title>PayMemo | Painel de Controle</title>
     <link
       rel="shortcut icon"
-      href="../assets/img/logo.png"
+      href="../assets/img/faviconSemFundo.png"
       type="image/x-icon"
     />
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../assets/js/main.js" defer></script>
   </head>
-  <body class="font-sans bg-gray-100 text-gray-800 min-h-screen flex flex-col">
-    <header
-      class="bg-gray-200 p-4 flex flex-col sm:flex-row items-center justify-center sm:justify-start shadow-md"
-    >
-      <img
-        id="logo"
-        src="../assets/img/logo.png"
-        alt="Logo da Empresa"
-        class="w-24 sm:w-32 md:w-40 h-auto mb-2 sm:mb-0 sm:mr-4"
-      />
-      <h1 class="text-2xl sm:text-3xl md:text-4xl text-[#8c52ff] font-bold">
-        Controle de Contas
-      </h1>
+
+  <body class="font-sans bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+    <header class="fixed w-full bg-white shadow-sm z-50">
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4"
+      >
+        <a href="../index.html">
+          <div class="flex items-center gap-3">
+            <img
+              src="../assets/img/faviconSemFundo.png"
+              alt="Logo PayMemo"
+              class="w-10 h-10"
+            />
+            <h1 class="text-2xl font-bold text-[#8c52ff]">
+              <span class="text-[#00ff00]">Pay</span>Memo
+            </h1>
+          </div>
+        </a>
+        <nav class="hidden sm:flex gap-6">
+          <a
+            href="../index.html"
+            class="text-gray-600 hover:text-[#8c52ff] transition"
+            >Home</a
+          >
+          <a href="#" class="text-gray-600 hover:text-[#8c52ff] transition"
+            >Configurações</a
+          >
+        </nav>
+      </div>
     </header>
 
-    <div
-      class="flex flex-wrap justify-center lg:justify-evenly m-4 gap-5 flex-grow"
-    >
-      <section
-        id="formularioAdicionarConta"
-        class="p-5 bg-white rounded-lg shadow-md w-full md:w-[45%] lg:w-[40%]"
-      >
-        <h2 class="mb-4 text-[#8c52ff] text-xl sm:text-2xl font-semibold">
-          Adicionar Nova Conta
-        </h2>
-        <form id="formAdicionarConta">
-          <label for="nome" class="block mb-1 text-left">Nome:</label>
-          <input
-            type="text"
-            id="nome"
-            name="nome"
-            required
-            class="p-2 mb-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-[#8c52ff]"
-          /><br />
+    <main class="pt-28 pb-16 px-4 md:px-8 flex flex-col flex-grow">
+      <h2 class="text-3xl font-bold text-[#8c52ff] mb-8 text-center">
+        Controle de Contas
+      </h2>
 
-          <label for="descricao" class="block mb-1 text-left">Descrição:</label>
-          <input
-            type="text"
-            id="descricao"
-            name="descricao"
-            required
-            class="p-2 mb-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-[#8c52ff]"
-          /><br />
+      <div class="flex flex-wrap justify-center gap-6 mb-10">
+        <section
+          class="bg-white p-6 rounded-2xl shadow-md w-full md:w-[45%] hover:shadow-lg transition"
+        >
+          <h3
+            class="text-xl font-semibold text-[#8c52ff] mb-4 flex items-center gap-2"
+          >
+            ➕ Adicionar Nova Conta
+          </h3>
+          <form id="formAdicionarConta" class="space-y-3">
+            <div>
+              <label for="nome" class="block text-sm font-medium mb-1"
+                >Nome:</label
+              >
+              <input
+                id="nome"
+                name="nome"
+                required
+                class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-[#8c52ff] outline-none"
+              />
+            </div>
+            <div>
+              <label for="descricao" class="block text-sm font-medium mb-1"
+                >Descrição:</label
+              >
+              <input
+                id="descricao"
+                name="descricao"
+                required
+                class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-[#8c52ff] outline-none"
+              />
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label for="data" class="block text-sm font-medium mb-1"
+                  >Data:</label
+                >
+                <input
+                  type="date"
+                  id="data"
+                  name="data"
+                  required
+                  class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-[#8c52ff] outline-none"
+                />
+              </div>
+              <div>
+                <label for="valor" class="block text-sm font-medium mb-1"
+                  >Valor (R$):</label
+                >
+                <input
+                  type="number"
+                  id="valor"
+                  name="valor"
+                  step="0.01"
+                  min="0"
+                  required
+                  class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-[#8c52ff] outline-none"
+                />
+              </div>
+            </div>
+            <div>
+              <label for="situacao" class="block text-sm font-medium mb-1"
+                >Situação:</label
+              >
+              <select
+                id="situacao"
+                name="situacao"
+                class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-[#8c52ff] outline-none"
+              >
+                <option value="Pago">Pago</option>
+                <option value="À Pagar">À Pagar</option>
+                <option value="Vencido">Vencido</option>
+              </select>
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-[#8c52ff] text-white font-semibold py-2.5 rounded-lg hover:bg-[#6d3cd8] transition"
+            >
+              Adicionar Conta
+            </button>
+          </form>
+        </section>
 
-          <label for="data" class="block mb-1 text-left">Data:</label>
-          <input
-            type="date"
-            id="data"
-            name="data"
-            required
-            class="p-2 mb-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-[#8c52ff]"
-          /><br />
-
-          <label for="valor" class="block mb-1 text-left">Valor em R$:</label>
+        <section
+          class="bg-white p-6 rounded-2xl shadow-md w-full md:w-[45%] hover:shadow-lg transition"
+        >
+          <h3
+            class="text-xl font-semibold text-[#7ed957] mb-4 flex items-center gap-2"
+          >
+            🔍 Buscar Conta por ID
+          </h3>
+          <label for="idConta" class="block text-sm font-medium mb-1"
+            >ID da Conta:</label
+          >
           <input
             type="number"
-            id="valor"
-            name="valor"
-            required
-            step="0.01"
-            min="0"
-            class="p-2 mb-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-[#8c52ff]"
-          /><br />
-
-          <label for="situacao" class="block mb-1 text-left">Situação:</label>
-          <select
-            name="situacao"
-            id="situacao"
-            class="p-2 mb-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-[#8c52ff]"
-          >
-            <option value="Pago">Pago</option>
-            <option value="Á Pagar">Á Pagar</option>
-            <option value="Vencido">Vencido</option>
-          </select>
-
+            id="idConta"
+            name="idConta"
+            placeholder="Digite o ID"
+            class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-[#7ed957] outline-none mb-4"
+          />
           <button
-            id="botaoEnviar"
-            type="submit"
-            class="bg-[#8c52ff] text-white cursor-pointer px-5 py-2 border-none rounded-md hover:bg-[#4b0082] transition-colors duration-300 mt-2"
+            id="botaoProcurar"
+            class="w-full bg-[#7ed957] text-white font-semibold py-2.5 rounded-lg hover:bg-[#68c04b] transition"
           >
-            Adicionar Conta
+            Procurar
           </button>
-        </form>
-      </section>
+          <div
+            id="resultadoProcura"
+            class="mt-5 bg-gray-50 p-4 rounded-lg border border-gray-200 text-sm text-left"
+          >
+            <p><b>ID:</b> 2</p>
+            <p><b>Nome:</b> Mensalidade da Academia</p>
+            <p><b>Descrição:</b> Plano mensal da academia</p>
+            <p><b>Data:</b> 20/10/2025</p>
+            <p><b>Valor:</b> R$ 99,90</p>
+            <p><b>Situação:</b> À Pagar</p>
+          </div>
+        </section>
+      </div>
 
       <section
-        id="buscarContaPorID"
-        class="p-5 bg-white rounded-lg shadow-md w-full md:w-[45%] lg:w-[40%]"
+        id="listarContas"
+        class="bg-white rounded-2xl shadow-md p-6 overflow-x-auto hover:shadow-lg transition"
       >
-        <h2 class="mb-4 text-[#8c52ff] text-xl sm:text-2xl font-semibold">
-          Procurar Conta por ID
-        </h2>
-
-        <label for="idConta" class="block mb-1 text-left">ID da Conta:</label>
-        <input
-          type="number"
-          id="idConta"
-          name="idConta"
-          placeholder="ID da Conta"
-          class="p-2 mb-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-[#7ed957]"
-        />
-
-        <button
-          id="botaoProcurar"
-          class="bg-[#7ed957] text-white cursor-pointer px-5 py-2 border-none rounded-md hover:bg-[#5dab33] transition-colors duration-300 mt-2"
-        >
-          Procurar
-        </button>
-
-        <div
-          id="resultadoProcura"
-          class="mt-7 text-left bg-gray-50 p-3 rounded-md border border-gray-200"
-        >
-          <p class="p-1 text-black"><b>ID:</b> 2</p>
-          <p class="p-1 text-black"><b>Nome:</b> Mensalidade da Academia</p>
-          <p class="p-1 text-black">
-            <b>Descrição:</b> Plano mensal da academia
-          </p>
-          <p class="p-1 text-black"><b>Data:</b> 20/10/2025</p>
-          <p class="p-1 text-black"><b>Valor:</b> R$ 99.90</p>
-          <p class="p-1 text-black"><b>Situação:</b> À Pagar</p>
-        </div>
-      </section>
-    </div>
-
-    <section
-      id="listarContas"
-      class="m-4 p-5 bg-white rounded-lg shadow-md overflow-x-auto"
-    >
-      <h2 class="mb-4 text-[#8c52ff] text-xl sm:text-2xl font-semibold">
-        Listar Contas
-      </h2>
-      <div class="overflow-x-auto">
-        <table id="tabelaContas" class="w-full border-collapse min-w-max">
+        <h3 class="text-2xl font-semibold text-[#8c52ff] mb-6 text-center">
+          📋 Lista de Contas
+        </h3>
+        <table class="w-full border-collapse text-sm md:text-base">
           <thead>
-            <tr>
-              <th
-                class="p-3 text-left border-b border-gray-300 bg-[#8c52ff] text-white text-sm sm:text-base"
-              >
-                ID
-              </th>
-              <th
-                class="p-3 text-left border-b border-gray-300 bg-[#8c52ff] text-white text-sm sm:text-base"
-              >
-                Nome
-              </th>
-              <th
-                class="p-3 text-left border-b border-gray-300 bg-[#8c52ff] text-white text-sm sm:text-base"
-              >
-                Descrição
-              </th>
-              <th
-                class="p-3 text-left border-b border-gray-300 bg-[#8c52ff] text-white text-sm sm:text-base"
-              >
-                Data
-              </th>
-              <th
-                class="p-3 text-left border-b border-gray-300 bg-[#8c52ff] text-white text-sm sm:text-base"
-              >
-                Valor
-              </th>
-              <th
-                class="p-3 text-left border-b border-gray-300 bg-[#8c52ff] text-white text-sm sm:text-base"
-              >
-                Situação
-              </th>
-              <th
-                class="p-3 text-left border-b border-gray-300 bg-[#8c52ff] text-white text-sm sm:text-base"
-              >
-                Ações
-              </th>
+            <tr class="bg-[#8c52ff] text-white">
+              <th class="p-3 text-left rounded-tl-lg">ID</th>
+              <th class="p-3 text-left">Nome</th>
+              <th class="p-3 text-left">Descrição</th>
+              <th class="p-3 text-left">Data</th>
+              <th class="p-3 text-left">Valor</th>
+              <th class="p-3 text-left">Situação</th>
+              <th class="p-3 text-left rounded-tr-lg">Ações</th>
             </tr>
           </thead>
           <tbody id="corpoTabelaContas">
-            <!-- As contas pelo DOM vem aqui -->
-            <tr>
-              <td class="p-3 text-left border-b border-gray-300 text-sm">1</td>
-              <td class="p-3 text-left border-b border-gray-300 text-sm">
-                Conta de Luz
-              </td>
-              <td class="p-3 text-left border-b border-gray-300 text-sm">
-                Conta do mês 10 de luz...
-              </td>
-              <td class="p-3 text-left border-b border-gray-300 text-sm">
-                10/10/2025
-              </td>
-              <td class="p-3 text-left border-b border-gray-300 text-sm">
-                R$ 120.53
-              </td>
-              <td class="p-3 text-left border-b border-gray-300 text-sm">
-                À Pagar
-              </td>
-              <td class="p-3 text-left border-b border-gray-300">
+            <tr class="border-b hover:bg-gray-50 transition">
+              <td class="p-3">1</td>
+              <td class="p-3">Conta de Luz</td>
+              <td class="p-3">Conta do mês 10 de luz...</td>
+              <td class="p-3">10/10/2025</td>
+              <td class="p-3">R$ 120,53</td>
+              <td class="p-3">À Pagar</td>
+              <td class="p-3 flex gap-2">
                 <button
-                  class="px-3 py-1.5 bg-[#2d5ce7] text-white border-none rounded-md shadow-sm hover:bg-blue-700 transition-colors duration-300 text-sm mr-2"
+                  class="bg-[#2d5ce7] text-white px-3 py-1.5 rounded-md text-sm hover:bg-blue-700 transition"
                 >
                   Editar
                 </button>
                 <button
-                  class="px-3 py-1.5 bg-[#ef573c] text-white border-none rounded-md shadow-sm hover:bg-red-600 transition-colors duration-300 text-sm"
-                >
-                  Apagar
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td class="p-3 text-left border-b border-gray-300 text-sm">2</td>
-              <td class="p-3 text-left border-b border-gray-300 text-sm">
-                Mensalidade da Academia
-              </td>
-              <td class="p-3 text-left border-b border-gray-300 text-sm">
-                Plano mensal da academia
-              </td>
-              <td class="p-3 text-left border-b border-gray-300 text-sm">
-                20/10/2025
-              </td>
-              <td class="p-3 text-left border-b border-gray-300 text-sm">
-                R$ 99.90
-              </td>
-              <td class="p-3 text-left border-b border-gray-300 text-sm">
-                À Pagar
-              </td>
-              <td class="p-3 text-left border-b border-gray-300">
-                <button
-                  class="px-3 py-1.5 bg-[#2d5ce7] text-white border-none rounded-md shadow-sm hover:bg-blue-700 transition-colors duration-300 text-sm mr-2"
-                >
-                  Editar
-                </button>
-                <button
-                  class="px-3 py-1.5 bg-[#ef573c] text-white border-none rounded-md shadow-sm hover:bg-red-600 transition-colors duration-300 text-sm"
+                  class="bg-[#ef573c] text-white px-3 py-1.5 rounded-md text-sm hover:bg-red-600 transition"
                 >
                   Apagar
                 </button>
@@ -250,14 +211,18 @@
             </tr>
           </tbody>
         </table>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <footer
-      class="bg-[#8c52ff] text-white text-center p-2.5 w-full text-xs sm:text-sm mt-auto"
-    >
-      <p class="m-0">
-        &copy; Copyright Danillo de Souza. Todos os direitos reservados.
+    <footer class="bg-[#8c52ff] text-white text-center py-3 text-sm mt-auto">
+      <p>
+        &copy; 2025 PayMemo — Desenvolvido por
+        <a
+          href="https://www.linkedin.com/in/danillosouza03/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Danillo Verardo</a
+        >
       </p>
     </footer>
   </body>
