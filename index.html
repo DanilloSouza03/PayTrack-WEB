@@ -3,61 +3,338 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PayTrack - Em Construção 🚧</title>
-    <link rel="icon" type="image/png" href="Logo.png" />
+    <title>PayMemo | Controle suas contas com facilidade</title>
+    <link rel="icon" type="image/png" href="assets/img/faviconSemFundo.png" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
-  <body
-    class="font-sans flex flex-col items-center justify-center min-h-screen text-center bg-gradient-to-br from-[#8c52ff] to-[#7ed957] text-white overflow-hidden p-4"
-  >
-    <div
-      class="max-w-md w-full p-5 bg-white bg-opacity-10 rounded-2xl shadow-lg backdrop-blur-md"
+  <body class="font-sans bg-gray-50 text-gray-800">
+    <header class="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
+      <div
+        class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4"
+      >
+        <div class="flex items-center space-x-3">
+          <img
+            src="assets/img/faviconSemFundo.png"
+            alt="Logo PayMemo"
+            class="w-10 h-10"
+          />
+          <h1 class="text-2xl font-bold text-[#8c52ff]">
+            <span class="text-[#00ff00]">Pay</span>Memo
+          </h1>
+        </div>
+
+        <nav class="hidden md:flex space-x-8 text-sm font-medium">
+          <a
+            href="#funcionalidades"
+            class="hover:text-[#8c52ff] transition-colors"
+            >Funcionalidades</a
+          >
+          <a href="#sobre" class="hover:text-[#8c52ff] transition-colors"
+            >Sobre</a
+          >
+          <a href="#contato" class="hover:text-[#8c52ff] transition-colors"
+            >Contato</a
+          >
+        </nav>
+
+        <div class="hidden md:flex space-x-3">
+          <button
+            id="loginBtn"
+            class="border border-[#8c52ff] text-[#8c52ff] px-5 py-2 rounded-lg hover:bg-[#8c52ff] hover:text-white transition-all"
+          >
+            Login
+          </button>
+          <button
+            id="registerBtn"
+            class="bg-[#7ed957] text-white px-5 py-2 rounded-lg hover:bg-[#68c04b] transition-all"
+          >
+            Cadastrar
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section
+      class="flex flex-col-reverse md:flex-row items-center justify-between max-w-7xl mx-auto pt-32 pb-20 px-6"
     >
-      <header>
-        <img
-          src="Logo.png"
-          alt="Logo PayTrack"
-          class="w-28 sm:w-32 mb-5 animate-float mx-auto"
-        />
-      </header>
-
-      <main>
-        <h1 class="text-3xl sm:text-4xl mb-2">Em Construção 🚧</h1>
-        <p class="text-base sm:text-lg opacity-90">
-          Estamos trabalhando para trazer uma nova experiência no controle de
-          contas pessoais. Volte em breve!
+      <div class="w-full md:w-1/2 text-center md:text-left">
+        <h2
+          class="text-4xl md:text-5xl font-extrabold text-[#8c52ff] leading-tight mb-4"
+        >
+          Simplifique o controle das suas contas
+        </h2>
+        <p class="text-gray-600 text-lg mb-6">
+          O PayMemo ajuda você a organizar suas finanças pessoais com
+          praticidade, segurança e visual intuitivo.
         </p>
-
         <a
           href="./pages/main.html"
-          class="inline-block mt-6 px-6 py-3 text-base border-none rounded-lg bg-white text-[#8c52ff] cursor-pointer font-semibold transition-all duration-300 hover:bg-gray-100 hover:translate-y-[-2px] no-underline"
-          >Acessar o Painel</a
+          class="bg-[#7ed957] text-white px-8 py-3 rounded-xl font-semibold text-lg shadow-md hover:bg-[#68c04b] transition-all duration-300"
         >
-      </main>
-    </div>
+          Acessar o Painel
+        </a>
+      </div>
 
-    <footer
-      class="absolute bottom-5 text-xs sm:text-sm text-white text-opacity-80"
+      <div class="w-full md:w-1/2 flex justify-center mb-10 md:mb-0">
+        <img
+          src="assets/img/dash.png"
+          alt="Painel PayMemo"
+          class="w-4/5 max-w-sm rounded-2xl shadow-lg hover:scale-105 transition-transform duration-500"
+        />
+      </div>
+    </section>
+
+    <section id="funcionalidades" class="bg-white py-16">
+      <div class="max-w-6xl mx-auto text-center px-6">
+        <h3 class="text-3xl font-bold text-[#8c52ff] mb-10">
+          Por que usar o PayMemo?
+        </h3>
+
+        <div class="grid md:grid-cols-3 gap-10">
+          <div class="p-6 rounded-xl bg-gray-50 hover:shadow-lg transition-all">
+            <div class="text-[#8c52ff] text-4xl mb-3">💡</div>
+            <h4 class="text-xl font-semibold mb-2">Organização Simples</h4>
+            <p class="text-gray-600">
+              Cadastre, edite e acompanhe suas contas de forma clara e
+              intuitiva.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-xl bg-gray-50 hover:shadow-lg transition-all">
+            <div class="text-[#8c52ff] text-4xl mb-3">🔒</div>
+            <h4 class="text-xl font-semibold mb-2">Segurança e Privacidade</h4>
+            <p class="text-gray-600">
+              Seus dados são tratados com segurança e criptografia.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-xl bg-gray-50 hover:shadow-lg transition-all">
+            <div class="text-[#8c52ff] text-4xl mb-3">📧</div>
+            <h4 class="text-xl font-semibold mb-2">Envio de lembretes</h4>
+            <p class="text-gray-600">
+              O PayMemo envia lembretes automáticos para evitar atrasos e
+              facilitar o controle financeiro.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="sobre"
+      class="bg-gradient-to-r from-[#8c52ff] to-[#7ed957] text-white py-20"
     >
-      <p>&copy; 2024 PayTrack — Desenvolvido por Danillo de Souza</p>
+      <div class="max-w-5xl mx-auto text-center px-6">
+        <h3 class="text-3xl font-bold mb-6">
+          Um novo jeito de cuidar das suas finanças
+        </h3>
+        <p class="text-lg opacity-90 leading-relaxed">
+          Criado para pessoas que querem simplicidade e controle total sobre
+          suas contas, o PayMemo é a ferramenta ideal para organizar seu dia a
+          dia financeiro. Tudo online, intuitivo e gratuito.
+        </p>
+      </div>
+    </section>
+
+    <section id="contato" class="py-16 bg-white text-center px-6">
+      <h3 class="text-3xl font-bold text-[#8c52ff] mb-6">Fale Conosco</h3>
+      <p class="text-gray-600 mb-8">
+        Tem alguma dúvida, sugestão ou quer testar o sistema? Entre em contato!
+      </p>
+
+      <a
+        href="mailto:danillodesouza03@gmail.com"
+        class="bg-[#8c52ff] text-white px-8 py-3 rounded-xl font-semibold shadow-md hover:bg-[#7e3ffb] transition-all duration-300"
+      >
+        Enviar E-mail
+      </a>
+    </section>
+
+    <footer class="bg-[#8c52ff] text-white text-center py-4 text-sm">
+      <p>
+        &copy; 2025 PayMemo — Desenvolvido por
+        <a
+          href="https://www.linkedin.com/in/danillosouza03/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Danillo Verardo</a
+        >
+      </p>
     </footer>
 
-    <style>
-      @keyframes float {
-        0% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-8px);
-        }
-        100% {
-          transform: translateY(0px);
-        }
-      }
-      .animate-float {
-        animation: float 3s ease-in-out infinite;
-      }
-    </style>
+    <!-- ====== Login MODAL ====== -->
+    <div
+      id="loginModal"
+      class="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm hidden flex justify-center items-center z-50"
+    >
+      <div
+        class="bg-white bg-opacity-90 backdrop-blur-md rounded-xl shadow-2xl p-8 w-11/12 max-w-md relative"
+      >
+        <button
+          class="absolute top-3 right-4 text-gray-400 hover:text-gray-600 text-xl font-bold"
+          data-close="loginModal"
+        >
+          &times;
+        </button>
+        <h2 class="text-2xl font-bold text-[#8c52ff] mb-6 text-center">
+          Login
+        </h2>
+        <form class="flex flex-col space-y-4">
+          <input
+            type="email"
+            placeholder="E-mail"
+            class="border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#8c52ff] focus:border-[#8c52ff] transition-all duration-300"
+          />
+          <input
+            type="password"
+            placeholder="Senha"
+            class="border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#8c52ff] focus:border-[#8c52ff] transition-all duration-300"
+          />
+          <button
+            type="submit"
+            class="bg-[#8c52ff] text-white py-3 rounded-lg hover:bg-[#7e3ffb] shadow-lg transition-all duration-300 font-semibold"
+          >
+            Entrar
+          </button>
+          <p class="text-sm text-center text-gray-600">
+            Ainda não tem conta?
+            <a
+              href="#"
+              id="openRegister"
+              class="text-[#8c52ff] hover:underline font-medium"
+              >Cadastre-se</a
+            >
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Cadstro MODAL -->
+    <div
+      id="registerModal"
+      class="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm hidden flex justify-center items-center z-50 p-4"
+    >
+      <div
+        class="bg-white bg-opacity-95 backdrop-blur-md rounded-xl shadow-2xl p-6 w-full max-w-lg relative"
+      >
+        <button
+          class="absolute top-3 right-4 text-gray-400 hover:text-gray-600 text-xl font-bold"
+          data-close="registerModal"
+        >
+          &times;
+        </button>
+
+        <h2 class="text-2xl font-bold text-[#7ed957] mb-6 text-center">
+          Criar Conta
+        </h2>
+
+        <form class="flex flex-col space-y-5">
+          <div>
+            <label
+              for="nome"
+              class="block text-sm font-medium text-gray-700 mb-1"
+              >Nome completo</label
+            >
+            <input
+              type="text"
+              id="nome"
+              placeholder="Ex: João Silva"
+              class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#7ed957] focus:border-[#7ed957] transition-all duration-300"
+            />
+          </div>
+
+          <div>
+            <label
+              for="email"
+              class="block text-sm font-medium text-gray-700 mb-1"
+              >E-mail</label
+            >
+            <input
+              type="email"
+              id="email"
+              placeholder="exemplo@email.com"
+              class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#7ed957] focus:border-[#7ed957] transition-all duration-300"
+            />
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label
+                for="senha"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Senha</label
+              >
+              <input
+                type="password"
+                id="senha"
+                placeholder="Digite sua senha"
+                class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#7ed957] focus:border-[#7ed957] transition-all duration-300"
+              />
+            </div>
+            <div>
+              <label
+                for="confirmSenha"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Confirmar Senha</label
+              >
+              <input
+                type="password"
+                id="confirmSenha"
+                placeholder="Confirme sua senha"
+                class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#7ed957] focus:border-[#7ed957] transition-all duration-300"
+              />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label
+                for="telefone"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Telefone</label
+              >
+              <input
+                type="tel"
+                id="telefone"
+                placeholder="(11) 99999-9999"
+                class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#7ed957] focus:border-[#7ed957] transition-all duration-300"
+              />
+            </div>
+            <div>
+              <label
+                for="dataNascimento"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Data de Nascimento</label
+              >
+              <input
+                type="date"
+                id="dataNascimento"
+                class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#7ed957] focus:border-[#7ed957] transition-all duration-300"
+              />
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="bg-[#7ed957] text-white py-3 rounded-lg hover:bg-[#68c04b] shadow-lg transition-all duration-300 font-semibold"
+          >
+            Cadastrar
+          </button>
+
+          <p class="text-sm text-center text-gray-600">
+            Já tem conta?
+            <a
+              href="#"
+              id="openLogin"
+              class="text-[#8c52ff] hover:underline font-medium"
+              >Entrar</a
+            >
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <script src="assets/js/auth.js"></script>
   </body>
 </html>
